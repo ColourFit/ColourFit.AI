@@ -3,75 +3,63 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>ColorFit AI</title>
+<title>ColorFit AI – Personal Stylist</title>
+<meta name="description" content="AI-powered personal stylist — smart outfit suggestions based on body type, skin tone, age and occasion."/>
+<meta name="keywords" content="outfit suggestions, personal stylist, skin tone, fashion, colorfit"/>
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9532389144445802" crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{min-height:100vh;font-family:'DM Sans',sans-serif;background:linear-gradient(135deg,#3730A3,#4F46E5,#7C3AED,#9333EA);display:flex;justify-content:center;padding:24px 14px 60px;transition:background 1s}
 body.dark{background:linear-gradient(135deg,#0F0C1D,#1A1040,#220D40)!important}
-body.dark .card{background:#1A1730}
-body.dark .ch{background:rgba(79,70,229,.15)!important;border-color:rgba(139,127,255,.2)!important}
-body.dark .ch p{color:#A89DC8}
+body.dark .card{background:#1A1730;color:#F0EEFF}
+body.dark .ch{background:rgba(79,70,229,.15)!important}
 body.dark .inp,body.dark .sel{background:#231F3A;color:#F0EEFF;border-color:rgba(139,127,255,.25)}
-body.dark .gtog{background:#231F3A;border-color:rgba(139,127,255,.2)}
+body.dark .gtog{background:#231F3A}
 body.dark .gb{color:#A89DC8}
-body.dark .lb{color:#6B5F90}
-body.dark .hint{color:#6B5F90}
-body.dark .rh h2{color:#F0EEFF}
-body.dark .rh small{color:#A89DC8}
-body.dark .st{color:#F0EEFF}
-body.dark .oinfo h4{color:#F0EEFF}
-body.dark .oinfo p{color:#A89DC8}
+body.dark .lb,body.dark .hint{color:#6B5F90}
+body.dark .rh h2,body.dark .st,body.dark .oinfo h4{color:#F0EEFF}
+body.dark .rh small,body.dark .oinfo p,body.dark .mid{color:#A89DC8}
 body.dark .ocard{background:#231F3A;border-color:rgba(139,127,255,.2)}
 body.dark .bact{background:#2A2550;color:#A89DC8;border-color:rgba(139,127,255,.2)}
 body.dark .avchip{background:#3A1A1A;color:#FCA5A5;border-color:#7F1D1D}
 body.dark .ptag{background:#2A2550;color:#A89DC8;border-color:rgba(139,127,255,.3)}
 body.dark .divl{background:rgba(139,127,255,.15)}
-body.dark .shimmer{background:#2A2550;color:#6B5F90}
-body.dark .bghost{color:#A89DC8;border-color:rgba(139,127,255,.2)}
-body.dark .modal{background:#1A1730}
-body.dark .modal h3{color:#F0EEFF}
-body.dark .modal>p{color:#A89DC8}
-body.dark .sbtn{background:#231F3A;border-color:rgba(139,127,255,.2);color:#F0EEFF}
-body.dark .clinp{background:#231F3A;color:#A89DC8;border-color:rgba(139,127,255,.2)}
-body.dark .selw::after{color:#6B5F90}
+body.dark .shimmer{background:#2A2550}
 .wrap{width:100%;max-width:680px}
 /* topbar */
-.topbar{display:flex;align-items:center;justify-content:center;margin-bottom:18px;position:relative}
-.lpill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.28);border-radius:50px;padding:8px 22px;color:#fff;backdrop-filter:blur(10px)}
-.lpill b{font-family:'Syne',sans-serif;font-size:17px;letter-spacing:-0.3px}
-.lpill .star{font-size:18px;color:#FFD700}
-.dmbtn{position:absolute;right:0;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:50px;padding:8px 16px;color:#fff;cursor:pointer;font-size:13px;font-weight:600;font-family:'Syne',sans-serif;transition:all .2s;letter-spacing:.3px}
-.dmbtn:hover{background:rgba(255,255,255,.28)}
+.topbar{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:18px;position:relative}
+.lpill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.28);border-radius:50px;padding:7px 20px;color:#fff;backdrop-filter:blur(10px)}
+.lpill b{font-family:'Syne',sans-serif;font-size:16px}
+.dmbtn{position:absolute;right:0;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:50px;padding:7px 14px;color:#fff;cursor:pointer;font-size:13px;font-weight:500;font-family:'DM Sans',sans-serif;transition:all .2s}
+.dmbtn:hover{background:rgba(255,255,255,.25)}
 /* card */
 .card{background:#fff;border-radius:24px;box-shadow:0 28px 70px rgba(49,46,129,.28);overflow:hidden;transition:background .4s}
-.ch{padding:32px 38px 24px;background:linear-gradient(135deg,rgba(79,70,229,.05),rgba(147,51,234,.04));border-bottom:1px solid rgba(79,70,229,.12);transition:all .4s}
-.ch h1{font-family:'Syne',sans-serif;font-size:27px;font-weight:800;letter-spacing:-1px;background:linear-gradient(135deg,#4F46E5,#9333EA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.ch p{color:#5B5480;font-size:14px;margin-top:4px;transition:color .3s}
+.ch{padding:32px 38px 24px;background:linear-gradient(135deg,rgba(79,70,229,.05),rgba(147,51,234,.04));border-bottom:1px solid rgba(79,70,229,.12)}
+.ch h1{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;letter-spacing:-1px;background:linear-gradient(135deg,#4F46E5,#9333EA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.ch p{color:#5B5480;font-size:14px;margin-top:4px}
 .cb{padding:26px 38px 36px}
 .step{display:none}.step.on{display:block;animation:up .4s ease}
 @keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 /* form */
 .fg{margin-bottom:17px}
-.lb{display:block;font-size:11px;font-weight:700;letter-spacing:.7px;text-transform:uppercase;color:#9A94BB;margin-bottom:8px;transition:color .3s}
-/* gender toggle */
-.gtog{display:flex;border:2px solid rgba(79,70,229,.13);border-radius:12px;overflow:hidden;background:#F7F6FF;transition:all .3s}
-.gb{flex:1;padding:13px 10px;border:none;background:transparent;cursor:pointer;font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:#5B5480;transition:all .2s;letter-spacing:.3px}
-.gb.on{background:linear-gradient(135deg,#4F46E5,#7C3AED);color:#fff}
+.lb{display:block;font-size:11px;font-weight:700;letter-spacing:.7px;text-transform:uppercase;color:#9A94BB;margin-bottom:8px}
+.gtog{display:flex;border:2px solid rgba(79,70,229,.13);border-radius:12px;overflow:hidden;background:#F7F6FF}
+.gb{flex:1;padding:12px;border:none;background:transparent;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:14px;color:#5B5480;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:6px}
+.gb.on{background:linear-gradient(135deg,#4F46E5,#7C3AED);color:#fff;font-weight:600}
 .g2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.inp,.sel{width:100%;padding:12px 14px;border:2px solid rgba(79,70,229,.13);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:14px;color:#0D0A1E;background:#FAFBFF;outline:none;transition:all .2s;-webkit-appearance:none;appearance:none}
+.inp,.sel{width:100%;padding:11px 14px;border:2px solid rgba(79,70,229,.13);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:14px;color:#0D0A1E;background:#FAFBFF;outline:none;transition:all .2s;-webkit-appearance:none;appearance:none}
 .inp:focus,.sel:focus{border-color:#4F46E5;box-shadow:0 0 0 3px rgba(79,70,229,.1)}
 .inp::placeholder{color:#C5C0DC}
-.selw{position:relative}
-.selw::after{content:'v';position:absolute;right:13px;top:50%;transform:translateY(-50%);color:#9A94BB;pointer-events:none;font-size:11px;font-weight:700;transition:color .3s}
+.sw{position:relative}.sw::after{content:'▾';position:absolute;right:12px;top:50%;transform:translateY(-50%);color:#9A94BB;pointer-events:none}
 .hxr{position:relative}
-.hxd{position:absolute;right:10px;top:50%;transform:translateY(-50%);width:24px;height:24px;border-radius:6px;border:2px solid rgba(0,0,0,.08);background:#D2A679;transition:background .3s}
+.hxd{position:absolute;right:10px;top:50%;transform:translateY(-50%);width:24px;height:24px;border-radius:6px;border:2px solid rgba(0,0,0,.08);background:#D2A679}
 .hxr .inp{padding-right:44px}
 .err{display:none;color:#EF4444;font-size:12px;margin-top:4px;font-weight:500}
-.hint{font-size:12px;color:#9A94BB;margin-top:3px;transition:color .3s}
-.bmain{width:100%;padding:14px;border:none;border-radius:12px;background:linear-gradient(135deg,#4F46E5,#7C3AED);color:#fff;font-family:'Syne',sans-serif;font-size:15px;font-weight:700;cursor:pointer;margin-top:4px;transition:all .25s;letter-spacing:.3px}
+.hint{font-size:12px;color:#9A94BB;margin-top:3px}
+.bmain{width:100%;padding:14px;border:none;border-radius:12px;background:linear-gradient(135deg,#4F46E5,#7C3AED);color:#fff;font-family:'Syne',sans-serif;font-size:15px;font-weight:700;cursor:pointer;margin-top:4px;transition:all .25s}
 .bmain:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(79,70,229,.4)}
-.bmain:active{transform:none}
 /* loading */
 .ld{display:none;text-align:center;padding:50px 20px}.ld.on{display:block}
 .sp{width:44px;height:44px;margin:0 auto 14px;border:4px solid rgba(79,70,229,.15);border-top-color:#4F46E5;border-radius:50%;animation:spin .8s linear infinite}
@@ -80,17 +68,14 @@ body.dark .selw::after{color:#6B5F90}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.4}}
 /* results */
 .rh{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:8px}
-.rh h2{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;color:#0D0A1E;transition:color .3s}
-.rh small{font-size:12px;color:#9A94BB;display:block;margin-top:2px;transition:color .3s}
-.bghost{padding:8px 14px;border:2px solid rgba(79,70,229,.13);border-radius:8px;background:transparent;color:#5B5480;font-family:'DM Sans',sans-serif;font-size:13px;cursor:pointer;transition:all .2s;font-weight:500}
-.bghost:hover{border-color:#4F46E5;color:#4F46E5}
-/* skin badge */
+.rh h2{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;color:#0D0A1E}
+.rh small{font-size:12px;color:#9A94BB;display:block;margin-top:2px}
+.bgo{padding:8px 14px;border:2px solid rgba(79,70,229,.13);border-radius:8px;background:transparent;color:#5B5480;font-family:'DM Sans',sans-serif;font-size:13px;cursor:pointer;transition:all .2s}
+.bgo:hover{border-color:#4F46E5;color:#4F46E5}
 .sbadge{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:50px;font-weight:600;font-size:13px;border:2px solid;margin-bottom:12px}
-/* profile strip */
 .pstrip{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:20px}
-.ptag{display:flex;align-items:center;gap:5px;padding:5px 11px;background:#F3F4FF;border:1.5px solid rgba(79,70,229,.15);border-radius:20px;font-size:11.5px;font-weight:600;color:#4F46E5;transition:all .3s}
-/* section title */
-.st{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:#0D0A1E;margin-bottom:11px;display:flex;align-items:center;gap:6px;transition:color .3s}
+.ptag{display:flex;align-items:center;gap:4px;padding:5px 11px;background:#F3F4FF;border:1.5px solid rgba(79,70,229,.15);border-radius:20px;font-size:11.5px;font-weight:600;color:#4F46E5}
+.st{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:#0D0A1E;margin-bottom:11px;display:flex;align-items:center;gap:6px}
 .cnt{background:linear-gradient(135deg,#4F46E5,#9333EA);color:#fff;font-size:10px;padding:2px 7px;border-radius:20px;font-weight:700}
 /* palette */
 .psec{margin-bottom:24px}
@@ -102,81 +87,72 @@ body.dark .selw::after{color:#6B5F90}
 /* avoid */
 .avsec{margin-bottom:20px}
 .avrow{display:flex;flex-wrap:wrap;gap:6px}
-.avchip{display:flex;align-items:center;gap:5px;padding:5px 10px;border-radius:20px;font-size:12px;font-weight:500;background:#FFF1F2;color:#BE123C;border:1.5px solid #FECDD3;transition:all .3s}
+.avchip{display:flex;align-items:center;gap:5px;padding:5px 10px;border-radius:20px;font-size:12px;font-weight:500;background:#FFF1F2;color:#BE123C;border:1.5px solid #FECDD3}
 .avdot{width:8px;height:8px;border-radius:50%}
-.divl{height:1px;background:rgba(79,70,229,.1);margin:20px 0;transition:background .3s}
+.divl{height:1px;background:rgba(79,70,229,.1);margin:20px 0}
 /* outfit cards */
 .osec{margin-bottom:22px}
-.ogrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:12px}
-.ocard{border-radius:18px;overflow:hidden;background:#fff;border:2px solid rgba(79,70,229,.08);box-shadow:0 4px 14px rgba(79,70,229,.06);cursor:pointer;transition:transform .22s,box-shadow .22s,border-color .22s,background .3s}
+.ogrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+.ocard{border-radius:18px;overflow:hidden;background:#fff;border:2px solid rgba(79,70,229,.08);box-shadow:0 4px 14px rgba(79,70,229,.06);cursor:pointer;transition:transform .22s,box-shadow .22s,border-color .22s}
 .ocard:hover{transform:translateY(-6px);box-shadow:0 18px 42px rgba(79,70,229,.18);border-color:#4F46E5}
 .oimg{width:100%;height:210px;position:relative;overflow:hidden;background:#EEF0FF}
 .oimg img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .45s;position:relative;z-index:1}
 .ocard:hover .oimg img{transform:scale(1.07)}
-.shimmer{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:#EEF0FF;z-index:0}
-.shimmer .s-icon{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,#4F46E5,#9333EA);display:flex;align-items:center;justify-content:center}
-.shimmer .s-icon svg{width:26px;height:26px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.shimmer span{font-size:11px;color:#9A94BB;font-weight:600;font-family:'DM Sans',sans-serif}
-.fbadge{position:absolute;top:8px;left:8px;color:#fff;font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px;backdrop-filter:blur(6px);z-index:2;font-family:'Syne',sans-serif}
+.shimmer{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;font-size:32px;background:#EEF0FF;z-index:0}
+.shimmer span{font-size:11px;color:#9A94BB;font-weight:600}
+.fbadge{position:absolute;top:8px;left:8px;color:#fff;font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px;backdrop-filter:blur(6px);z-index:2}
 .cbar{position:absolute;bottom:0;left:0;right:0;height:5px;display:flex;z-index:2}
 .cseg{flex:1}
-.oinfo{padding:11px 13px 13px;border-top:1px solid rgba(79,70,229,.07);transition:border-color .3s}
-.oinfo h4{font-family:'Syne',sans-serif;font-size:12.5px;font-weight:700;color:#0D0A1E;margin-bottom:3px;line-height:1.4;transition:color .3s}
-.oinfo p{font-size:11px;color:#9A94BB;line-height:1.45;margin-bottom:7px;transition:color .3s}
+.oinfo{padding:11px 13px 13px;border-top:1px solid rgba(79,70,229,.07)}
+.oinfo h4{font-family:'Syne',sans-serif;font-size:12.5px;font-weight:700;color:#0D0A1E;margin-bottom:3px;line-height:1.4}
+.oinfo p{font-size:11px;color:#9A94BB;line-height:1.45;margin-bottom:7px}
 .cdots{display:flex;gap:4px}
 .cdot{width:14px;height:14px;border-radius:50%;border:2px solid rgba(255,255,255,.8);box-shadow:0 1px 3px rgba(0,0,0,.15)}
 /* actions */
-.arow{display:flex;gap:8px;flex-wrap:wrap;padding-top:6px;border-top:1px solid rgba(79,70,229,.1);transition:border-color .3s}
-.bact{flex:1;padding:10px 8px;border:2px solid rgba(79,70,229,.13);border-radius:10px;background:#F7F6FF;color:#5B5480;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:5px;min-width:80px}
+.arow{display:flex;gap:8px;flex-wrap:wrap;padding-top:6px;border-top:1px solid rgba(79,70,229,.1)}
+.bact{flex:1;padding:10px;border:2px solid rgba(79,70,229,.13);border-radius:10px;background:#F7F6FF;color:#5B5480;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:5px;min-width:90px}
 .bact:hover{border-color:#4F46E5;color:#4F46E5}
 .bact.ok{border-color:#10B981;color:#10B981}
 /* share modal */
 .moverlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1000;align-items:center;justify-content:center;padding:16px;backdrop-filter:blur(4px)}
 .moverlay.on{display:flex;animation:fi .2s ease}
 @keyframes fi{from{opacity:0}to{opacity:1}}
-.modal{background:#fff;border-radius:20px;padding:24px;width:100%;max-width:360px;box-shadow:0 28px 70px rgba(0,0,0,.3);animation:su .28s cubic-bezier(.22,1,.36,1);transition:background .3s}
+.modal{background:#fff;border-radius:20px;padding:24px;width:100%;max-width:360px;box-shadow:0 28px 70px rgba(0,0,0,.3);animation:su .28s cubic-bezier(.22,1,.36,1)}
+body.dark .modal{background:#1A1730}
+body.dark .modal h3,body.dark .sbtn{color:#F0EEFF}
+body.dark .sbtn{background:#231F3A;border-color:rgba(139,127,255,.2)}
 @keyframes su{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-.modal h3{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;color:#0D0A1E;margin-bottom:5px;transition:color .3s}
-.modal>p{font-size:13px;color:#9A94BB;margin-bottom:16px;transition:color .3s}
+.modal h3{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;color:#0D0A1E;margin-bottom:5px}
+.modal>p{font-size:13px;color:#9A94BB;margin-bottom:16px}
 .clrow{display:flex;gap:7px;margin-bottom:14px}
-.clinp{flex:1;padding:9px 11px;border:2px solid rgba(79,70,229,.13);border-radius:8px;font-size:12px;color:#5B5480;background:#FAFBFF;outline:none;font-family:'DM Sans',sans-serif;transition:all .3s}
-.clbtn{padding:9px 14px;border:none;border-radius:8px;background:linear-gradient(135deg,#4F46E5,#7C3AED);color:#fff;font-size:12px;font-weight:600;cursor:pointer;font-family:'Syne',sans-serif;white-space:nowrap;letter-spacing:.2px}
+.clinp{flex:1;padding:9px 11px;border:2px solid rgba(79,70,229,.13);border-radius:8px;font-size:12px;color:#5B5480;background:#FAFBFF;outline:none;font-family:'DM Sans',sans-serif}
+body.dark .clinp{background:#231F3A;color:#A89DC8;border-color:rgba(139,127,255,.2)}
+.clbtn{padding:9px 13px;border:none;border-radius:8px;background:linear-gradient(135deg,#4F46E5,#7C3AED);color:#fff;font-size:12px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;white-space:nowrap}
 .sbtns{display:flex;flex-direction:column;gap:8px}
 .sbtn{display:flex;align-items:center;gap:10px;padding:11px 14px;border-radius:11px;border:2px solid rgba(79,70,229,.12);background:#F7F6FF;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:#0D0A1E;transition:all .2s;text-decoration:none;width:100%}
 .sbtn:hover{border-color:#4F46E5;color:#4F46E5}
-.sico{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;font-weight:700}
-.mclose{margin-top:10px;width:100%;padding:11px;border:none;border-radius:10px;background:linear-gradient(135deg,#4F46E5,#7C3AED);color:#fff;font-family:'Syne',sans-serif;font-size:14px;font-weight:700;cursor:pointer;letter-spacing:.3px}
+.sico{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.mclose{margin-top:10px;width:100%;padding:11px;border:none;border-radius:10px;background:linear-gradient(135deg,#4F46E5,#7C3AED);color:#fff;font-family:'Syne',sans-serif;font-size:14px;font-weight:700;cursor:pointer}
 /* toast */
 .toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(70px);background:#0D0A1E;color:#fff;padding:10px 20px;border-radius:50px;font-size:13px;font-weight:500;z-index:9999;transition:transform .3s cubic-bezier(.22,1,.36,1);pointer-events:none}
 .toast.on{transform:translateX(-50%) translateY(0)}
 /* footer */
-.foot{text-align:center;margin-top:16px;display:flex;justify-content:center;gap:16px}
-.foot a{color:rgba(255,255,255,.55);font-size:12px;text-decoration:none;font-family:'DM Sans',sans-serif;transition:color .2s}
-.foot a:hover{color:#fff}
-/* responsive */
-@media(max-width:480px){.g2{grid-template-columns:1fr}.ch,.cb{padding-left:18px;padding-right:18px}.ch h1{font-size:22px}.ogrid{grid-template-columns:1fr 1fr}.rh{flex-direction:column}.dmbtn .dm-label{display:none}}
+.foot{text-align:center;margin-top:16px;display:flex;justify-content:center;gap:14px}
+.foot a{color:rgba(255,255,255,.5);font-size:12px;text-decoration:none}.foot a:hover{color:#fff}
+@media(max-width:480px){.g2{grid-template-columns:1fr}.ch,.cb{padding-left:18px;padding-right:18px}.ch h1{font-size:22px}.ogrid{grid-template-columns:1fr 1fr}.rh{flex-direction:column}}
 @media(max-width:350px){.ogrid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <div class="wrap">
-
-  <!-- TOP BAR -->
+  <!-- topbar -->
   <div class="topbar">
-    <div class="lpill">
-      <span class="star">*</span>
-      <b>ColorFit AI</b>
-    </div>
-    <button class="dmbtn" id="dmb" onclick="toggleDark()">
-      <span id="dmtxt">DARK</span>
-    </button>
+    <div class="lpill"><span>✨</span><b>ColorFit AI</b></div>
+    <button class="dmbtn" id="dmb" onclick="toggleDark()">🌙 Dark</button>
   </div>
 
   <div class="card">
-    <div class="ch">
-      <h1>Personal Stylist</h1>
-      <p>Smart outfit picks based on body type, age and occasion</p>
-    </div>
+    <div class="ch"><h1>Personal Stylist</h1><p>Smart outfit picks · body type · age · occasion</p></div>
     <div class="cb">
 
       <!-- STEP 1 -->
@@ -184,122 +160,92 @@ body.dark .selw::after{color:#6B5F90}
         <div class="fg">
           <label class="lb">Gender</label>
           <div class="gtog">
-            <button class="gb on" id="gM" onclick="setG('male')">MALE</button>
-            <button class="gb" id="gF" onclick="setG('female')">FEMALE</button>
+            <button class="gb on" id="gM" onclick="setG('male')">👨 Male</button>
+            <button class="gb" id="gF" onclick="setG('female')">👩 Female</button>
           </div>
         </div>
         <div class="g2">
-          <div class="fg"><label class="lb">Age</label><input type="number" id="iAge" class="inp" placeholder="e.g. 22" min="10" max="80"/></div>
+          <div class="fg"><label class="lb">Age</label><input type="number" id="iAge" class="inp" placeholder="e.g. 22"/></div>
           <div class="fg"><label class="lb">Height (cm)</label><input type="number" id="iH" class="inp" placeholder="e.g. 175"/></div>
         </div>
         <div class="g2">
           <div class="fg"><label class="lb">Weight (kg)</label><input type="number" id="iW" class="inp" placeholder="e.g. 68"/></div>
           <div class="fg">
             <label class="lb">Occasion</label>
-            <div class="selw">
-              <select id="iOcc" class="sel">
-                <option value="casual">Casual</option>
-                <option value="party">Party</option>
-                <option value="college">College</option>
-                <option value="office">Office</option>
-                <option value="wedding">Wedding</option>
-                <option value="indian">Indian Traditional</option>
-                <option value="western">Western</option>
-                <option value="arabian">Arabian</option>
-                <option value="korean">Korean / KPOP</option>
-                <option value="japanese">Japanese</option>
-                <option value="streetwear">Streetwear</option>
-                <option value="travel">Travel</option>
-                <option value="gym">Gym</option>
-                <option value="beach">Beach</option>
-                <option value="formal">Formal</option>
-              </select>
-            </div>
+            <div class="sw"><select id="iOcc" class="sel">
+              <option value="casual">👕 Casual</option>
+              <option value="party">🎉 Party</option>
+              <option value="college">🎓 College</option>
+              <option value="office">💼 Office</option>
+              <option value="wedding">💍 Wedding</option>
+              <option value="indian">🪷 Indian</option>
+              <option value="western">🤠 Western</option>
+              <option value="arabian">🌙 Arabian</option>
+              <option value="korean">🌸 Korean</option>
+              <option value="japanese">⛩️ Japanese</option>
+              <option value="streetwear">🧢 Streetwear</option>
+              <option value="travel">✈️ Travel</option>
+              <option value="gym">💪 Gym</option>
+              <option value="beach">🏖️ Beach</option>
+              <option value="formal">🎩 Formal</option>
+            </select></div>
           </div>
         </div>
         <div class="fg">
           <label class="lb">Skin Tone HEX <span style="font-weight:400;text-transform:none;color:#9A94BB">(optional)</span></label>
-          <div class="hxr">
-            <input type="text" id="iHex" class="inp" placeholder="#D2A679"/>
-            <div class="hxd" id="hxp"></div>
-          </div>
-          <div class="err" id="hexErr">Enter valid HEX e.g. #D2A679</div>
-          <p class="hint">Leave blank - medium tone auto-selected</p>
+          <div class="hxr"><input type="text" id="iHex" class="inp" placeholder="#D2A679"/><div class="hxd" id="hxp"></div></div>
+          <div class="err" id="hexErr">⚠ Valid HEX e.g. #D2A679</div>
+          <p class="hint">Leave blank → medium tone auto-selected</p>
         </div>
-        <button class="bmain" onclick="gen()">GET MY STYLE</button>
+        <button class="bmain" onclick="gen()">✨ Get My Style</button>
       </div>
 
       <!-- LOADING -->
-      <div class="ld" id="ld">
-        <div class="sp"></div>
-        <p id="lt">Analyzing your body type...</p>
-      </div>
+      <div class="ld" id="ld"><div class="sp"></div><p id="lt">Analyzing your body type…</p></div>
 
       <!-- STEP 2 -->
       <div class="step" id="s2">
         <div class="rh">
-          <div><h2 id="rT">Your Style Profile</h2><small id="rS"></small></div>
-          <button class="bghost" onclick="reset()">Back</button>
+          <div><h2 id="rT">Your Style</h2><small id="rS"></small></div>
+          <button class="bgo" onclick="reset()">↩ Back</button>
         </div>
         <div id="skinB" class="sbadge"></div>
         <div class="pstrip" id="pstrip"></div>
-        <div class="psec">
-          <div class="st">Best Colors for You <span class="cnt" id="cCnt">24</span></div>
-          <div class="pgrid" id="pGrid"></div>
-        </div>
-        <div class="avsec">
-          <div class="st">Colors to Avoid</div>
-          <div class="avrow" id="avRow"></div>
-        </div>
+        <div class="psec"><div class="st">Best Colors <span class="cnt" id="cCnt">24</span></div><div class="pgrid" id="pGrid"></div></div>
+        <div class="avsec"><div class="st">Avoid These Colors</div><div class="avrow" id="avRow"></div></div>
         <div class="divl"></div>
-        <div class="osec">
-          <div class="st" id="oTitle">Outfit Picks</div>
-          <div class="ogrid" id="oGrid"></div>
-        </div>
+        <div class="osec"><div class="st" id="oTitle">Outfit Picks</div><div class="ogrid" id="oGrid"></div></div>
         <div class="arow">
-          <button class="bact" id="cpyB" onclick="copyR()">COPY</button>
-          <button class="bact" onclick="openShare()">SHARE</button>
-          <button class="bact" onclick="reset()">AGAIN</button>
+          <button class="bact" id="cpyB" onclick="copyR()">📋 Copy</button>
+          <button class="bact" onclick="openShare()">🔗 Share</button>
+          <button class="bact" onclick="reset()">🔄 Again</button>
         </div>
       </div>
-
     </div>
   </div>
 
   <div class="foot">
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="#">ColorFit AI 2025</a>
+    <a href="https://colorfit-ai.netlify.app/privacy.html" target="_blank">Privacy Policy</a>
+    <a href="#">© 2025 ColorFit AI</a>
   </div>
 </div>
 
 <!-- SHARE MODAL -->
 <div class="moverlay" id="sm" onclick="if(event.target===this)closeShare()">
   <div class="modal">
-    <h3>Share ColorFit AI</h3>
+    <h3>🔗 Share ColorFit AI</h3>
     <p>Share the app or your results with friends!</p>
     <div class="clrow">
-      <input class="clinp" id="surl" value="https://colourfit.github.io/ColourFit.AI/" readonly/>
-      <button class="clbtn" onclick="cpLink()">COPY</button>
+      <input class="clinp" id="surl" value="https://colorfit-ai.netlify.app" readonly/>
+      <button class="clbtn" onclick="cpLink()">📋 Copy</button>
     </div>
     <div class="sbtns">
-      <a class="sbtn" id="waB" href="#" target="_blank">
-        <div class="sico" style="background:#E8F8EE;color:#25D366;font-size:18px">W</div>
-        <div><div style="font-weight:600">WhatsApp</div><div style="font-size:11px;color:#9A94BB">Share on WhatsApp</div></div>
-      </a>
-      <a class="sbtn" id="twB" href="#" target="_blank">
-        <div class="sico" style="background:#E8F0FF;color:#1DA1F2;font-size:18px">X</div>
-        <div><div style="font-weight:600">Twitter / X</div><div style="font-size:11px;color:#9A94BB">Post on Twitter</div></div>
-      </a>
-      <a class="sbtn" id="tgB" href="#" target="_blank">
-        <div class="sico" style="background:#E8F4FF;color:#0088cc;font-size:18px">T</div>
-        <div><div style="font-weight:600">Telegram</div><div style="font-size:11px;color:#9A94BB">Share on Telegram</div></div>
-      </a>
-      <button class="sbtn" onclick="natShare()">
-        <div class="sico" style="background:#F3F0FF;color:#4F46E5;font-size:18px">+</div>
-        <div><div style="font-weight:600">More Options</div><div style="font-size:11px;color:#9A94BB">Share via other apps</div></div>
-      </button>
+      <a class="sbtn" id="waB" href="#" target="_blank"><div class="sico" style="background:#E8F8EE">💬</div><div><div style="font-weight:600">WhatsApp</div><div style="font-size:11px;color:#9A94BB">Share on WhatsApp</div></div></a>
+      <a class="sbtn" id="twB" href="#" target="_blank"><div class="sico" style="background:#E8F0FF">🐦</div><div><div style="font-weight:600">Twitter / X</div><div style="font-size:11px;color:#9A94BB">Post on Twitter</div></div></a>
+      <a class="sbtn" id="tgB" href="#" target="_blank"><div class="sico" style="background:#E8F4FF">✈️</div><div><div style="font-weight:600">Telegram</div><div style="font-size:11px;color:#9A94BB">Share on Telegram</div></div></a>
+      <button class="sbtn" onclick="natShare()"><div class="sico" style="background:#F3F0FF">📤</div><div><div style="font-weight:600">More Options</div><div style="font-size:11px;color:#9A94BB">Other apps</div></div></button>
     </div>
-    <button class="mclose" onclick="closeShare()">CLOSE</button>
+    <button class="mclose" onclick="closeShare()">✕ Close</button>
   </div>
 </div>
 
@@ -309,246 +255,21 @@ body.dark .selw::after{color:#6B5F90}
 var ST={g:'male',age:22,h:175,w:68,occ:'casual',hex:'#D2A679'};
 var DARK=false;
 
+// dark mode
 function toggleDark(){
   DARK=!DARK;
   document.body.classList.toggle('dark',DARK);
-  document.getElementById('dmtxt').textContent=DARK?'LIGHT':'DARK';
+  document.getElementById('dmb').textContent=DARK?'☀️ Light':'🌙 Dark';
   try{localStorage.setItem('cfdk',DARK?'1':'0');}catch(e){}
 }
-try{if(localStorage.getItem('cfdk')==='1'){DARK=true;document.body.classList.add('dark');document.getElementById('dmtxt').textContent='LIGHT';}}catch(e){}
+try{if(localStorage.getItem('cfdk')==='1'){DARK=true;document.body.classList.add('dark');document.getElementById('dmb').textContent='☀️ Light';}}catch(e){}
 
-function setG(g){
-  ST.g=g;
-  document.getElementById('gM').classList.toggle('on',g==='male');
-  document.getElementById('gF').classList.toggle('on',g==='female');
-}
-
-document.getElementById('iHex').addEventListener('input',function(){
-  var v=this.value.trim();
-  if(/^#[0-9A-Fa-f]{6}$/.test(v)){
-    document.getElementById('hxp').style.background=v;
-    setBg(v);
-  }
-});
-
-function setBg(h){
-  var r=parseInt(h.slice(1,3),16),g=parseInt(h.slice(3,5),16),b=parseInt(h.slice(5,7),16),hh=hue(r,g,b);
-  document.body.style.background='linear-gradient(135deg,hsl('+hh+',62%,24%),hsl('+((hh+30)%360)+',58%,36%),hsl('+((hh+55)%360)+',54%,44%))';
-}
+function setG(g){ST.g=g;document.getElementById('gM').classList.toggle('on',g==='male');document.getElementById('gF').classList.toggle('on',g==='female');}
+document.getElementById('iHex').addEventListener('input',function(){var v=this.value.trim();if(/^#[0-9A-Fa-f]{6}$/.test(v)){document.getElementById('hxp').style.background=v;setBg(v);}});
+function setBg(h){var r=parseInt(h.slice(1,3),16),g=parseInt(h.slice(3,5),16),b=parseInt(h.slice(5,7),16),hh=hue(r,g,b);document.body.style.background='linear-gradient(135deg,hsl('+hh+',62%,24%),hsl('+((hh+30)%360)+',58%,36%),hsl('+((hh+55)%360)+',54%,44%))';}
 function hue(r,g,b){r/=255;g/=255;b/=255;var mx=Math.max(r,g,b),mn=Math.min(r,g,b),d=mx-mn,h=0;if(!d)return 200;if(mx===r)h=((g-b)/d)%6;else if(mx===g)h=(b-r)/d+2;else h=(r-g)/d+4;return Math.round(h*60+360)%360;}
 function vHex(h){return/^#[0-9A-Fa-f]{6}$/.test(h);}
 function toRgb(hex){return{r:parseInt(hex.slice(1,3),16),g:parseInt(hex.slice(3,5),16),b:parseInt(hex.slice(5,7),16)};}
-function bright(r,g,b){return(r*299+g*587+b*114)/1000;}
-function skinT(b){return b>=200?'fair':b>=140?'medium':'dark';}
-function bmi(h,w){return w/((h/100)*(h/100));}
-function bodyT(h,w){var b=bmi(h,w);return b<18.5?'slim':b<25?'medium':b<30?'heavy':'obese';}
-function fitL(b){return b==='slim'?'Slim Fit':b==='medium'?'Regular Fit':b==='heavy'?'Relaxed Fit':'Oversized Fit';}
-function ageG(a){return a<18?'teen':a<25?'young':a<35?'midyoung':a<50?'adult':'senior';}
-function htG(h){return h<163?'Petite':h<178?'Average':'Tall';}
-function fitC(f){return f==='Slim Fit'?'rgba(79,70,229,.9)':f==='Regular Fit'?'rgba(5,150,105,.9)':f==='Relaxed Fit'?'rgba(217,119,6,.9)':'rgba(147,51,234,.9)';}
-
-var PAL={
-  fair:{
-    best:[{h:'#0F4C81',n:'Navy Blue'},{h:'#C41E3A',n:'Crimson'},{h:'#2E8B57',n:'Sea Green'},{h:'#FF6B6B',n:'Coral'},{h:'#B8860B',n:'Dark Gold'},{h:'#4B0082',n:'Indigo'},{h:'#008080',n:'Teal'},{h:'#8B0000',n:'Dark Red'},{h:'#556B2F',n:'Olive'},{h:'#191970',n:'Midnight Blue'},{h:'#D4AF37',n:'Gold'},{h:'#9370DB',n:'Purple'},{h:'#20B2AA',n:'Light Teal'},{h:'#CD853F',n:'Peru'},{h:'#228B22',n:'Forest Green'},{h:'#4169E1',n:'Royal Blue'},{h:'#DC143C',n:'Crimson Red'},{h:'#2F4F4F',n:'Dark Slate'},{h:'#8FBC8F',n:'Sea Green'},{h:'#DAA520',n:'Goldenrod'},{h:'#B22222',n:'Firebrick'},{h:'#483D8B',n:'Slate Blue'},{h:'#1A1A2E',n:'Midnight'},{h:'#FFF8DC',n:'Ivory'}],
-    avoid:[{h:'#FFD700',n:'Bright Yellow'},{h:'#FFA500',n:'Orange'},{h:'#FFE4E1',n:'Misty Rose'},{h:'#FFFACD',n:'Lemon Chiffon'}]
-  },
-  medium:{
-    best:[{h:'#FFFFFF',n:'White'},{h:'#F5F5DC',n:'Cream'},{h:'#FFD700',n:'Gold'},{h:'#FF6347',n:'Tomato Red'},{h:'#00CED1',n:'Turquoise'},{h:'#8A2BE2',n:'Blue Violet'},{h:'#32CD32',n:'Lime Green'},{h:'#FF4500',n:'Orange Red'},{h:'#1E90FF',n:'Dodger Blue'},{h:'#FF1493',n:'Deep Pink'},{h:'#00FA9A',n:'Spring Green'},{h:'#FF8C00',n:'Dark Orange'},{h:'#7B68EE',n:'Slate Blue'},{h:'#48D1CC',n:'Med Turquoise'},{h:'#FA8072',n:'Salmon'},{h:'#40E0D0',n:'Aqua'},{h:'#EE82EE',n:'Violet'},{h:'#90EE90',n:'Light Green'},{h:'#F08080',n:'Light Coral'},{h:'#B0C4DE',n:'Steel Blue'},{h:'#AFEEEE',n:'Pale Turquoise'},{h:'#E6E6FA',n:'Lavender'},{h:'#FFA07A',n:'Light Salmon'},{h:'#98FB98',n:'Pale Green'}],
-    avoid:[{h:'#808080',n:'Grey'},{h:'#A9A9A9',n:'Dark Grey'},{h:'#C0C0C0',n:'Silver'},{h:'#D3D3D3',n:'Light Grey'}]
-  },
-  dark:{
-    best:[{h:'#FFFFFF',n:'White'},{h:'#FFFAFA',n:'Snow'},{h:'#F0FFFF',n:'Azure'},{h:'#E0FFFF',n:'Light Cyan'},{h:'#FFFFE0',n:'Light Yellow'},{h:'#7FFFD4',n:'Aquamarine'},{h:'#00FF7F',n:'Spring Green'},{h:'#FFC0CB',n:'Pink'},{h:'#FFD700',n:'Gold'},{h:'#FFDAB9',n:'Peach Puff'},{h:'#00BFFF',n:'Sky Blue'},{h:'#FF69B4',n:'Hot Pink'},{h:'#ADFF2F',n:'Yellow Green'},{h:'#40E0D0',n:'Turquoise'},{h:'#FF6347',n:'Tomato'},{h:'#EEE8AA',n:'Pale Goldenrod'},{h:'#98FB98',n:'Pale Green'},{h:'#ADD8E6',n:'Light Blue'},{h:'#F0E68C',n:'Khaki'},{h:'#E6E6FA',n:'Lavender'},{h:'#FFF0F5',n:'Lavender Blush'},{h:'#F5FFFA',n:'Mint Cream'},{h:'#FAEBD7',n:'Antique White'},{h:'#F0FFF0',n:'Honeydew'}],
-    avoid:[{h:'#000000',n:'Black'},{h:'#1C1C1C',n:'Near Black'},{h:'#2F2F2F',n:'Very Dark'},{h:'#8B4513',n:'Saddle Brown'}]
-  }
-};
-
-var IMG={
-  m_shirt:'https://images.unsplash.com/photo-1602810316498-ab67cf68c8e1?w=400&q=80',
-  m_tee:'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&q=80',
-  m_polo:'https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=400&q=80',
-  m_big:'https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=400&q=80',
-  m_hoodie:'https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400&q=80',
-  m_jogger:'https://images.unsplash.com/photo-1622470953794-aa9c70b0fb9d?w=400&q=80',
-  m_cargo:'https://images.unsplash.com/photo-1552346154-21d32810aba3?w=400&q=80',
-  m_denim:'https://images.unsplash.com/photo-1516257984-b1b4d707412e?w=400&q=80',
-  m_blazer:'https://images.unsplash.com/photo-1588117305388-c2631a279f82?w=400&q=80',
-  m_nsuit:'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80',
-  m_gsuit:'https://images.unsplash.com/photo-1600091166971-7f9faad6c498?w=400&q=80',
-  m_tux:'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=400&q=80',
-  m_kurta:'https://images.unsplash.com/photo-1583397777647-de87af18a867?w=400&q=80',
-  m_sherwani:'https://images.unsplash.com/photo-1591786538873-a37e5ba6c5dc?w=400&q=80',
-  m_thobe:'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=400&q=80',
-  m_gym:'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&q=80',
-  m_linen:'https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=400&q=80',
-  m_track:'https://images.unsplash.com/photo-1545346315-f4c47e3e1b55?w=400&q=80',
-  f_top:'https://images.unsplash.com/photo-1485125639709-a60c3a500bf1?w=400&q=80',
-  f_floral:'https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=400&q=80',
-  f_casual:'https://images.unsplash.com/photo-1581044777550-4cfa60707c03?w=400&q=80',
-  f_maxi:'https://images.unsplash.com/photo-1502716119720-b23a93e5fe1b?w=400&q=80',
-  f_summer:'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=400&q=80',
-  f_wrap:'https://images.unsplash.com/photo-1562572159-4efd90232073?w=400&q=80',
-  f_denim:'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&q=80',
-  f_mini:'https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=400&q=80',
-  f_body:'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&q=80',
-  f_gown:'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400&q=80',
-  f_office:'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&q=80',
-  f_jump:'https://images.unsplash.com/photo-1562572159-4efd90232073?w=400&q=80',
-  f_saree:'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80',
-  f_lehenga:'https://images.unsplash.com/photo-1621184455862-c163dfb30e0f?w=400&q=80',
-  f_hoodie:'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&q=80',
-  f_cargo:'https://images.unsplash.com/photo-1552346154-21d32810aba3?w=400&q=80',
-  f_gym:'https://images.unsplash.com/photo-1518310383802-640c2de311b6?w=400&q=80',
-  f_sundress:'https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=400&q=80'
-};
-
-var DB={
-  male:{
-    casual:[{n:'White Shirt + Jeans',d:'Clean sharp everyday look',i:'m_shirt',c:['#F5F5F5','#1560BD','#8B4513'],f:'Slim Fit',b:['slim','medium']},{n:'Grey Hoodie + Joggers',d:'Cozy street style',i:'m_hoodie',c:['#808080','#2A2A2A','#FFF'],f:'Regular Fit',b:['medium']},{n:'Oversized Tee + Cargo',d:'Bold relaxed urban',i:'m_big',c:['#1A1A1A','#556B2F','#FF6347'],f:'Oversized Fit',b:['heavy','obese']},{n:'Navy Polo + Chinos',d:'Smart polished casual',i:'m_polo',c:['#001F5B','#C3B091','#FFF'],f:'Regular Fit',b:['slim','medium']},{n:'Denim Jacket + White Tee',d:'Classic layered look',i:'m_denim',c:['#4682B4','#FFF','#1A1A1A'],f:'Regular Fit',b:['slim','medium','heavy']},{n:'Linen Shirt + Trousers',d:'Light breathable style',i:'m_linen',c:['#F5DEB3','#C3B091','#FFF'],f:'Relaxed Fit',b:['heavy','obese']}],
-    party:[{n:'Black Shirt + Dark Jeans',d:'Classic night-out look',i:'m_blazer',c:['#1A1A1A','#1B2A4A','#C0C0C0'],f:'Slim Fit',b:['slim','medium']},{n:'Maroon Blazer + Black Pants',d:'Suave evening style',i:'m_blazer',c:['#800000','#1A1A1A','#FFF'],f:'Regular Fit',b:['medium']},{n:'Navy Tuxedo',d:'Sharp formal party look',i:'m_tux',c:['#001F5B','#FFF','#D4AF37'],f:'Slim Fit',b:['slim','medium']},{n:'Grey Suit + White Shirt',d:'Elegant understated',i:'m_gsuit',c:['#808080','#FFF','#1A1A1A'],f:'Regular Fit',b:['medium','heavy']},{n:'All Black Relaxed Suit',d:'Modern party style',i:'m_nsuit',c:['#1A1A1A','#FFF','#C0C0C0'],f:'Relaxed Fit',b:['heavy','obese']}],
-    college:[{n:'Hoodie + Slim Joggers',d:'Campus everyday look',i:'m_jogger',c:['#4F46E5','#1A1A1A','#FFF'],f:'Slim Fit',b:['slim','medium'],a:['teen','young']},{n:'Graphic Tee + Cargo',d:'Trendy campus style',i:'m_cargo',c:['#FFD700','#556B2F','#FFF'],f:'Regular Fit',b:['medium'],a:['teen','young','midyoung']},{n:'Denim Jacket + Chinos',d:'Relaxed layered style',i:'m_denim',c:['#4682B4','#C3B091','#FFF'],f:'Regular Fit',b:['slim','medium']},{n:'Oversized Sweatshirt + Jeans',d:'Comfortable everyday',i:'m_big',c:['#808080','#1560BD','#FFF'],f:'Oversized Fit',b:['heavy','obese']}],
-    office:[{n:'Navy Suit + White Shirt',d:'Power office dressing',i:'m_nsuit',c:['#001F5B','#FFF','#708090'],f:'Slim Fit',b:['slim','medium']},{n:'Grey Suit + Blue Shirt',d:'Smart professional',i:'m_gsuit',c:['#808080','#ADD8E6','#1A1A1A'],f:'Regular Fit',b:['medium']},{n:'Blazer + Chinos',d:'Smart casual office',i:'m_blazer',c:['#2F4F4F','#C3B091','#FFF'],f:'Regular Fit',b:['slim','medium']},{n:'Dark Relaxed Suit',d:'Refined for bigger frames',i:'m_nsuit',c:['#1A1A1A','#FFF','#C0C0C0'],f:'Relaxed Fit',b:['heavy','obese']}],
-    indian:[{n:'Ivory and Gold Sherwani',d:'Regal grand occasion look',i:'m_sherwani',c:['#FFFFF0','#D4AF37','#800000'],f:'Regular Fit',b:['slim','medium']},{n:'Royal Blue Kurta Pajama',d:'Traditional yet modern',i:'m_kurta',c:['#4169E1','#F5F5DC','#D4AF37'],f:'Relaxed Fit',b:['medium','heavy']},{n:'White Kurta Churidar',d:'Simple elegant traditional',i:'m_kurta',c:['#FFF','#F5F5DC','#D4AF37'],f:'Slim Fit',b:['slim']},{n:'Embroidered Kurta Relaxed',d:'Comfortable festive look',i:'m_kurta',c:['#800000','#F5F5DC','#D4AF37'],f:'Relaxed Fit',b:['heavy','obese']}],
-    arabian:[{n:'Classic White Thobe',d:'Pure traditional Arabian',i:'m_thobe',c:['#FFF','#F5F5F5','#D4AF37'],f:'Regular Fit'},{n:'Cream Thobe Grand',d:'Grand occasion Arabian',i:'m_thobe',c:['#F5DEB3','#D4AF37','#8B6914'],f:'Relaxed Fit'}],
-    wedding:[{n:'Ivory Sherwani + Dupatta',d:'Timeless bridal look',i:'m_sherwani',c:['#FFFFF0','#D4AF37','#800000'],f:'Slim Fit',b:['slim','medium']},{n:'Blue Bandhgala Suit',d:'Modern wedding formal',i:'m_blazer',c:['#002366','#D4AF37','#FFF'],f:'Regular Fit',b:['medium']},{n:'Dark Sherwani Relaxed',d:'Comfortable wedding look',i:'m_kurta',c:['#1A1A1A','#D4AF37','#800000'],f:'Relaxed Fit',b:['heavy','obese']}],
-    streetwear:[{n:'Black Tee + Olive Cargo',d:'Bold urban street style',i:'m_cargo',c:['#1A1A1A','#556B2F','#FF6347'],f:'Regular Fit',b:['slim','medium'],a:['teen','young']},{n:'White Tracksuit',d:'Clean minimal street',i:'m_track',c:['#FFF','#000','#F00'],f:'Regular Fit',b:['medium']},{n:'Bomber Jacket + Cargo',d:'Premium layered streetwear',i:'m_cargo',c:['#228B22','#000','#FFF'],f:'Relaxed Fit',b:['heavy','obese']}],
-    travel:[{n:'Linen Shirt + Shorts',d:'Light comfortable travel',i:'m_linen',c:['#F5DEB3','#C3B091','#FFF'],f:'Regular Fit',b:['slim','medium']},{n:'Utility Jacket + Cargo',d:'Adventure ready outfit',i:'m_cargo',c:['#556B2F','#8B6914','#1A1A1A'],f:'Relaxed Fit',b:['medium','heavy']}],
-    gym:[{n:'Tank Top + Black Shorts',d:'Performance gym look',i:'m_gym',c:['#CC2200','#1A1A1A','#FFF'],f:'Slim Fit',b:['slim','medium']},{n:'Oversized Gym Tee + Joggers',d:'Relaxed comfortable workout',i:'m_big',c:['#1A1A1A','#808080','#FFF'],f:'Relaxed Fit',b:['heavy','obese']}],
-    korean:[{n:'Pastel Cardigan + Slim Pants',d:'K-style soft aesthetic',i:'m_polo',c:['#FAF0E6','#1A1A1A','#C0C0C0'],f:'Slim Fit',b:['slim','medium']},{n:'Oversized Pastel Shirt',d:'KPOP inspired cozy look',i:'m_big',c:['#B0C4DE','#FFF','#808080'],f:'Oversized Fit',b:['medium','heavy']}],
-    japanese:[{n:'Black Kimono Jacket + Slacks',d:'Minimalist Japanese style',i:'m_blazer',c:['#1A1A1A','#8B0000','#FFF'],f:'Regular Fit',b:['slim','medium']},{n:'All White Monochrome',d:'Japanese zen minimal',i:'m_tee',c:['#FFF','#F0F0F0','#808080'],f:'Oversized Fit',b:['medium','heavy']}],
-    western:[{n:'Flannel Shirt + Bootcut Jeans',d:'Classic western casual',i:'m_denim',c:['#8B0000','#1560BD','#FFF'],f:'Regular Fit'},{n:'Denim Jacket + Brown Boots',d:'Rugged western layered',i:'m_denim',c:['#4682B4','#8B4513','#FFF'],f:'Relaxed Fit'}],
-    beach:[{n:'Floral Shirt + Board Shorts',d:'Vibrant tropical beach',i:'m_linen',c:['#FF6347','#1560BD','#FFD700'],f:'Regular Fit'},{n:'White Linen Set',d:'Clean breezy beach style',i:'m_linen',c:['#FFF','#F5DEB3','#87CEEB'],f:'Relaxed Fit'}],
-    formal:[{n:'Black Tuxedo',d:'Classic black tie look',i:'m_tux',c:['#000','#FFF','#C0C0C0'],f:'Slim Fit',b:['slim','medium']},{n:'Midnight Blue Suit',d:'Modern formal elegance',i:'m_nsuit',c:['#191970','#FFF','#D4AF37'],f:'Regular Fit',b:['medium']},{n:'Charcoal Relaxed Suit',d:'Comfortable formal look',i:'m_gsuit',c:['#36454F','#FFF','#C0C0C0'],f:'Relaxed Fit',b:['heavy','obese']}]
-  },
-  female:{
-    casual:[{n:'White Top + Mom Jeans',d:'Fresh everyday look',i:'f_top',c:['#FFF','#5B7A99','#C3B091'],f:'Slim Fit',b:['slim','medium']},{n:'Floral Midi Dress',d:'Feminine breezy style',i:'f_floral',c:['#FFB6C1','#90EE90','#FFF'],f:'Regular Fit',b:['slim','medium']},{n:'Oversized Sweater + Leggings',d:'Cozy comfortable casual',i:'f_hoodie',c:['#DDA0DD','#1A1A1A','#FFF'],f:'Oversized Fit',b:['heavy','obese']},{n:'Denim Skirt + Crop Tee',d:'Trendy summer casual',i:'f_denim',c:['#4682B4','#FFB6C1','#FFF'],f:'Slim Fit',b:['slim'],a:['teen','young']},{n:'Flowy Maxi Dress',d:'Effortless flowy style',i:'f_maxi',c:['#F5DEB3','#C3B091','#87CEEB'],f:'Relaxed Fit',b:['heavy','obese']},{n:'Jeans + Floral Blouse',d:'Balanced smart casual',i:'f_casual',c:['#1560BD','#FFB6C1','#FFF'],f:'Regular Fit',b:['medium']}],
-    party:[{n:'Gold Sequin Mini Dress',d:'Glam standout party',i:'f_mini',c:['#D4AF37','#C0C0C0','#000'],f:'Slim Fit',b:['slim','medium']},{n:'Red Bodycon Dress',d:'Bold confident party',i:'f_body',c:['#DC143C','#000','#C0C0C0'],f:'Slim Fit',b:['slim','medium']},{n:'Black Blazer Dress',d:'Sleek night out look',i:'f_office',c:['#1A1A1A','#FFF','#FFD700'],f:'Regular Fit',b:['medium']},{n:'Floral Wrap Party Dress',d:'Flattering for curves',i:'f_wrap',c:['#FF6347','#FFD700','#FFF'],f:'Relaxed Fit',b:['heavy','obese']}],
-    college:[{n:'Oversized Hoodie + Shorts',d:'Go-to campus comfort',i:'f_hoodie',c:['#9370DB','#1A1A1A','#FFF'],f:'Oversized Fit',b:['slim','medium'],a:['teen','young']},{n:'Denim Skirt + Crop Tee',d:'Cute campus casual',i:'f_denim',c:['#4682B4','#FFB6C1','#FFF'],f:'Slim Fit',b:['slim'],a:['teen','young']},{n:'Floral Summer Dress',d:'Light feminine campus',i:'f_summer',c:['#FFB6C1','#90EE90','#FFF'],f:'Regular Fit',b:['medium','heavy']},{n:'Jogger Set + Crop Hoodie',d:'Sporty chic college look',i:'f_hoodie',c:['#FF69B4','#C0C0C0','#FFF'],f:'Relaxed Fit',b:['medium','heavy','obese']}],
-    office:[{n:'Black Pencil Skirt + Blouse',d:'Classic power office',i:'f_office',c:['#1A1A1A','#FFF','#C0C0C0'],f:'Slim Fit',b:['slim','medium']},{n:'Blazer + Wide Leg Trousers',d:'Sharp professional look',i:'f_office',c:['#708090','#FFF','#1A1A1A'],f:'Regular Fit',b:['medium']},{n:'Wrap Dress + Pumps',d:'Flattering elegant workwear',i:'f_wrap',c:['#2F4F4F','#C3B091','#FFF'],f:'Relaxed Fit',b:['heavy','obese']},{n:'Tailored Jumpsuit',d:'Modern structured office',i:'f_jump',c:['#1A1A1A','#FFF','#708090'],f:'Regular Fit',b:['slim','medium']}],
-    indian:[{n:'Deep Red Silk Saree',d:'Timeless elegant traditional',i:'f_saree',c:['#8B0000','#D4AF37','#FFF8DC'],f:'Regular Fit',b:['slim','medium']},{n:'Teal Anarkali Suit',d:'Flowy ethnic all frames',i:'f_casual',c:['#008080','#D4AF37','#FFF'],f:'Relaxed Fit',b:['heavy','obese']},{n:'Pink and Silver Lehenga',d:'Festive celebration look',i:'f_lehenga',c:['#FF69B4','#C0C0C0','#FFF'],f:'Regular Fit',b:['slim','medium']},{n:'Ivory Silk Saree + Gold',d:'Classic bridal party look',i:'f_saree',c:['#FFFFF0','#D4AF37','#FF69B4'],f:'Regular Fit'}],
-    arabian:[{n:'Classic Black Abaya',d:'Elegant traditional covering',i:'f_maxi',c:['#000','#D4AF37','#FFF'],f:'Regular Fit'},{n:'Turquoise Embroidered Kaftan',d:'Vibrant occasion kaftan',i:'f_maxi',c:['#40E0D0','#D4AF37','#FFF'],f:'Relaxed Fit'}],
-    wedding:[{n:'Red and Gold Bridal Lehenga',d:'Classic bridal grandeur',i:'f_lehenga',c:['#DC143C','#D4AF37','#800000'],f:'Regular Fit',b:['slim','medium']},{n:'Ivory Silk Saree + Jewels',d:'Understated bridal elegance',i:'f_saree',c:['#FFFFF0','#D4AF37','#FF69B4'],f:'Regular Fit'},{n:'Floor Length Gown',d:'Fusion wedding style',i:'f_gown',c:['#191970','#D4AF37','#FFF'],f:'Relaxed Fit',b:['heavy','obese']}],
-    streetwear:[{n:'Crop Hoodie + Cargo Pants',d:'Bold feminine street style',i:'f_cargo',c:['#FF69B4','#556B2F','#FFF'],f:'Oversized Fit',b:['slim','medium'],a:['teen','young']},{n:'Oversized Flannel + Shorts',d:'90s grunge revival look',i:'f_hoodie',c:['#8B0000','#1A1A1A','#FFF'],f:'Oversized Fit',b:['medium','heavy']}],
-    travel:[{n:'Linen Dress + Sun Hat',d:'Breezy travel chic style',i:'f_summer',c:['#F5DEB3','#C3B091','#87CEEB'],f:'Regular Fit'},{n:'Jumpsuit + White Sneakers',d:'Practical stylish travel',i:'f_jump',c:['#556B2F','#FFF','#8B4513'],f:'Relaxed Fit'},{n:'Casual Sundress',d:'Comfortable feminine look',i:'f_sundress',c:['#FFD700','#87CEEB','#FFF'],f:'Regular Fit'}],
-    gym:[{n:'Sports Bra + Leggings',d:'Sleek performance gym',i:'f_gym',c:['#FF6347','#1A1A1A','#FFF'],f:'Slim Fit',b:['slim','medium']},{n:'Oversized Tee + Bike Shorts',d:'Comfortable workout style',i:'f_hoodie',c:['#9370DB','#1A1A1A','#FFF'],f:'Relaxed Fit',b:['heavy','obese']}],
-    korean:[{n:'Pastel Midi Dress',d:'Soft K-style feminine look',i:'f_summer',c:['#FFB6C1','#FFF','#DDA0DD'],f:'Regular Fit',b:['slim','medium']},{n:'Oversized Puff Sleeve Dress',d:'Cute cozy KPOP style',i:'f_floral',c:['#E6E6FA','#FFF','#FFB6C1'],f:'Oversized Fit',b:['medium','heavy']}],
-    japanese:[{n:'Yukata Inspired Wrap Dress',d:'Japanese cultural aesthetic',i:'f_wrap',c:['#8B0000','#FFF','#000'],f:'Regular Fit'},{n:'White Minimalist Linen Set',d:'Japanese zen minimal',i:'f_top',c:['#FFF','#C0C0C0','#1A1A1A'],f:'Oversized Fit'}],
-    western:[{n:'Floral Sundress + Ankle Boots',d:'Classic western feminine',i:'f_sundress',c:['#FFD700','#8B4513','#FFF'],f:'Regular Fit'},{n:'Denim Cutoffs + Flannel Shirt',d:'Rugged western casual',i:'f_denim',c:['#4682B4','#8B0000','#FFF'],f:'Relaxed Fit'}],
-    beach:[{n:'Flowy Pink Maxi Dress',d:'Elegant beach day look',i:'f_maxi',c:['#FFB6C1','#87CEEB','#FFF'],f:'Regular Fit'},{n:'Tropical Print Sundress',d:'Fun vibrant beach style',i:'f_sundress',c:['#FF6347','#FFD700','#87CEEB'],f:'Relaxed Fit'}],
-    formal:[{n:'Floor Length Evening Gown',d:'Timeless black tie elegance',i:'f_gown',c:['#191970','#D4AF37','#FFF'],f:'Slim Fit',b:['slim','medium']},{n:'Classic Black LBD + Pearls',d:'Understated formal chic',i:'f_body',c:['#000','#FFFFF0','#C0C0C0'],f:'Regular Fit',b:['medium']},{n:'Flowy Formal Maxi',d:'Elegant for fuller figures',i:'f_maxi',c:['#191970','#D4AF37','#FFF'],f:'Relaxed Fit',b:['heavy','obese']}]
-  }
-};
-
-function pick(g,occ,body,age){
-  var pool=(DB[g]&&DB[g][occ])?DB[g][occ]:DB[g]['casual'];
-  var fl=fitL(body);
-  var sc=pool.map(function(o){var s=0;if(!o.b||o.b.indexOf(body)>-1)s+=4;if(!o.a||o.a.indexOf(age)>-1)s+=2;if(o.f===fl)s+=3;return{o:o,s:s};});
-  sc.sort(function(a,b){return b.s-a.s;});
-  var r=[];for(var i=0;i<Math.min(4,sc.length);i++)r.push(sc[i].o);
-  return r;
-}
-
-function gen(){
-  var hexRaw=document.getElementById('iHex').value.trim()||'#D2A679';
-  var hv=hexRaw[0]==='#'?hexRaw:'#'+hexRaw;
-  if(hexRaw&&!vHex(hv)){document.getElementById('hexErr').style.display='block';return;}
-  document.getElementById('hexErr').style.display='none';
-  ST.age=parseInt(document.getElementById('iAge').value)||22;
-  ST.h=parseInt(document.getElementById('iH').value)||170;
-  ST.w=parseInt(document.getElementById('iW').value)||65;
-  ST.occ=document.getElementById('iOcc').value;
-  ST.hex=hv;
-  document.getElementById('s1').classList.remove('on');
-  document.getElementById('ld').classList.add('on');
-  var msgs=['Analyzing body type...','Finding best fit style...','Matching skin tone colors...','Picking your outfits...'];
-  var i=0,lt=document.getElementById('lt');
-  var iv=setInterval(function(){i++;if(msgs[i])lt.textContent=msgs[i];},600);
-  setTimeout(function(){clearInterval(iv);document.getElementById('ld').classList.remove('on');renderR();document.getElementById('s2').classList.add('on');},2600);
-}
-
-function renderR(){
-  var g=ST.g,hex=ST.hex,occ=ST.occ;
-  var rgb=toRgb(hex),br=bright(rgb.r,rgb.g,rgb.b),skin=skinT(br);
-  var body=bodyT(ST.h,ST.w),age=ageG(ST.age),height=htG(ST.h);
-  var bmiv=bmi(ST.h,ST.w).toFixed(1);
-  setBg(hex);
-  document.getElementById('rT').textContent=g==='male'?'Your Style Profile (M)':'Your Style Profile (F)';
-  document.getElementById('rS').textContent=fitL(body)+' - '+age+' - BMI '+bmiv;
-  var SC={fair:{l:'Fair Skin',bg:'#FFF7ED',b:'#FED7AA',d:'#FBBF24',t:'#B45309'},medium:{l:'Medium Skin',bg:'#FEF3C7',b:'#FDE68A',d:'#D97706',t:'#92400E'},dark:{l:'Dark Skin',bg:'#FEF9C3',b:'#FDE047',d:'#8B4513',t:'#713F12'}};
-  var sc=SC[skin],bdg=document.getElementById('skinB');
-  bdg.style.cssText='background:'+sc.bg+';border-color:'+sc.b+';color:'+sc.t+';display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:50px;font-weight:600;font-size:13px;border:2px solid;margin-bottom:12px';
-  bdg.innerHTML='<span style="width:16px;height:16px;border-radius:50%;background:'+sc.d+';display:inline-block;border:2px solid rgba(0,0,0,.1)"></span>'+sc.l+' Detected';
-  var ps=document.getElementById('pstrip');
-  ps.innerHTML=[{i:'H',t:ST.h+'cm x '+ST.w+'kg'},{i:'F',t:fitL(body)},{i:'A',t:age+' ('+ST.age+'y)'},{i:'H',t:height},{i:'B',t:'BMI '+bmiv}].map(function(x){return'<div class="ptag">'+x.t+'</div>';}).join('');
-  var pal=PAL[skin],pg=document.getElementById('pGrid');
-  pg.innerHTML='';document.getElementById('cCnt').textContent=pal.best.length;
-  pal.best.forEach(function(c){var d=document.createElement('div');d.className='swatch';d.style.background=c.h;d.innerHTML='<span class="stip">'+c.n+'</span>';pg.appendChild(d);});
-  var av=document.getElementById('avRow');av.innerHTML='';
-  pal.avoid.forEach(function(c){var d=document.createElement('div');d.className='avchip';d.innerHTML='<span class="avdot" style="background:'+c.h+'"></span>'+c.n;av.appendChild(d);});
-  document.getElementById('oTitle').innerHTML='Outfit Picks <span style="font-family:DM Sans;font-weight:500;font-size:11px;color:#9A94BB">for '+fitL(body)+'</span>';
-  var picks=pick(g,occ,body,age);
-  var og=document.getElementById('oGrid');og.innerHTML='';
-  picks.forEach(function(o,idx){
-    var url=IMG[o.i]||'';
-    var fitc=fitC(o.f);
-    var cs=o.c.map(function(c){return'<div class="cseg" style="background:'+c+'"></div>';}).join('');
-    var cd=o.c.map(function(c){return'<div class="cdot" style="background:'+c+'"></div>';}).join('');
-    var card=document.createElement('div');card.className='ocard';
-    var sid='sh'+idx+'x'+Date.now();
-    var isFemale=o.i.startsWith('f_');
-    var svgIcon=isFemale
-      ? '<svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 10c-5.33 0-8 2.67-8 4v2h16v-2c0-1.33-2.67-4-8-4z"/></svg>'
-      : '<svg viewBox="0 0 24 24"><path d="M12 2C9.24 2 7 4.24 7 7s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 10c-5.33 0-8 2.67-8 4v2h16v-2c0-1.33-2.67-4-8-4z"/></svg>';
-    card.innerHTML=
-      '<div class="oimg">'
-        +'<div class="shimmer" id="'+sid+'"><div class="s-icon">'+svgIcon+'</div><span>Loading image...</span></div>'
-        +'<img src="'+url+'" alt="'+o.n+'" loading="lazy"'
-        +' onload="var e=document.getElementById(\''+sid+'\');if(e)e.style.display=\'none\';"'
-        +' onerror="var e=document.getElementById(\''+sid+'\');if(e){e.querySelector(\'span\').textContent=\''+o.n+'\';}"'
-        +' style="position:relative;z-index:1"/>'
-        +'<div class="fbadge" style="background:'+fitc+'">'+o.f+'</div>'
-        +'<div class="cbar">'+cs+'</div>'
-      +'</div>'
-      +'<div class="oinfo"><h4>'+o.n+'</h4><p>'+o.d+'</p><div class="cdots">'+cd+'</div></div>';
-    og.appendChild(card);
-  });
-}
-
-function reset(){
-  document.getElementById('s2').classList.remove('on');
-  document.getElementById('s1').classList.add('on');
-  document.getElementById('iHex').value='';
-  document.getElementById('hxp').style.background='#D2A679';
-  document.getElementById('hexErr').style.display='none';
-  document.body.style.background='linear-gradient(135deg,#3730A3,#4F46E5,#7C3AED,#9333EA)';
-  window.scrollTo({top:0,behavior:'smooth'});
-}
-
-function copyR(){
-  var skin=document.getElementById('skinB').textContent.trim();
-  var body=bodyT(ST.h,ST.w);
-  var text='ColorFit AI - My Style Profile\n\nSkin: '+skin+'\nGender: '+ST.g+'\nOccasion: '+ST.occ+'\nFit: '+fitL(body)+'\nBMI: '+bmi(ST.h,ST.w).toFixed(1)+'\nAge: '+ageG(ST.age)+'\n\nhttps://colourfit.github.io/ColourFit.AI/';
-  navigator.clipboard.writeText(text).then(function(){
-    var b=document.getElementById('cpyB');b.classList.add('ok');b.textContent='COPIED!';
-    showT('Results copied!');
-    setTimeout(function(){b.classList.remove('ok');b.textContent='COPY';},2500);
-  }).catch(function(){showT('Copy failed - try manually');});
-}
-
-function openShare(){
-  var skin=document.getElementById('skinB').textContent.trim();
-  var txt='Check out ColorFit AI - Smart Personal Stylist! My style: '+skin+'. Get yours at:';
-  var url='https://colourfit.github.io/ColourFit.AI/';
-  var e=encodeURIComponent;
-  document.getElementById('surl').value=url;
-  document.getElementById('waB').href='https://wa.me/?text='+e(txt+' '+url);
-  document.getElementById('twB').href='https://twitter.com/intent/tweet?text='+e(txt)+'&url='+e(url);
-  document.getElementById('tgB').href='https://t.me/share/url?url='+e(url)+'&text='+e(txt);
-  document.getElementById('sm').classList.add('on');
-}
-function closeShare(){document.getElementById('sm').classList.remove('on');}
-function cpLink(){navigator.clipboard.writeText(document.getElementById('surl').value).then(function(){showT('Link copied!');}).catch(function(){showT('Copy failed');});}
-function natShare(){if(navigator.share){navigator.share({title:'ColorFit AI',text:'Smart outfit picks based on your body type and skin tone!',url:'https://colourfit.github.io/ColourFit.AI/'}).then(function(){closeShare();}).catch(function(){});}else{cpLink();}}
-function showT(m){var t=document.getElementById('toast');t.textContent=m;t.classList.add('on');setTimeout(function(){t.classList.remove('on');},2700);}
-</script>
-</body>
-</html>
+function br(r,g,b){return(r*299+g*587+b*114)/1000;}
+function st(b){return b>=200?'fair':b>=140?'medium':'dark';}
+functio
